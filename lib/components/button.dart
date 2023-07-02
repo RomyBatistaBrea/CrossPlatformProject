@@ -8,15 +8,14 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentWidth = MediaQuery.of(context).size.width;
 
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        constraints: const BoxConstraints(maxWidth: 200), // Set the maximum width
-        width: currentWidth * .6,
-        padding: const EdgeInsets.all(25),
-        margin: const EdgeInsets.symmetric(horizontal: 125),
+        //constraints: const BoxConstraints(maxWidth: 185, minWidth: 185),
+        width: 185,
+        padding: const EdgeInsets.all(22),
+        margin: const EdgeInsets.symmetric(horizontal: 130),
         decoration: BoxDecoration(
           color: const Color.fromRGBO(135, 210, 193, 1),
           borderRadius: BorderRadius.circular(50.0),
