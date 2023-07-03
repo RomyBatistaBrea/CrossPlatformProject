@@ -93,12 +93,46 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 ? const Color.fromARGB(255, 114, 219, 226)
                 : Colors.white, //Gets the Icon value from the constructor
 
+            //const SizedBox(height: 300),
+
             /*CustomTextField(
                     controller: accessCodeController,
                     obscureText: false,
                     prefixIcon: const Icon(Icons.layers),
                     labelText: 'Access Code',
-                            ),*/
+                    ),
+
+                    const SizedBox(height: 21),
+                    
+                    CustomTextField(
+                      controller: usernameController,
+                      obscureText: false,
+                      prefixIcon: const Icon(Icons.person),
+                      labelText: 'Username',
+                    ),
+
+                    const SizedBox(height: 21),
+
+                    CustomTextField(
+                      controller: passwordController,
+                      obscureText: true,
+                      prefixIcon: const Icon(Icons.lock),
+                      labelText: 'Password',
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    CustomCheckbox(
+                      isChecked: false, // Provide the initial checked state
+                      onChanged: (bool value) {
+                        // Handle the onChanged event
+                        // You can update the state or perform any necessary actions here
+                      },
+                    ),*/
+
+            /*final usernameController = TextEditingController();
+              final passwordController = TextEditingController();
+              final accessCodeController = TextEditingController();*/
           ),
         ),
       ),

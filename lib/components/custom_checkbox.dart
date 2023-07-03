@@ -23,36 +23,45 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
     super.initState();
   }
 
- @override
+  @override
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width;
 
     return Container(
       constraints: const BoxConstraints(maxWidth: 400),
       width: currentWidth * .8,
-      padding:const EdgeInsets.all(3),
-      decoration: BoxDecoration( // Set the border color here
-        borderRadius: BorderRadius.circular(10.0), // Set the desired border radius here
+      padding: const EdgeInsets.all(3),
+      decoration: BoxDecoration(
+        // Set the border color here
+        borderRadius:
+            BorderRadius.circular(10.0), // Set the desired border radius here
       ),
-        child: Row(children: [
+      child: Row(
+        children: [
           Checkbox(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0)),
-          checkColor: Colors.white,
-          fillColor: MaterialStateProperty.all(Colors.blue),
-          value: isChecked,
-          onChanged: (value) {
-            setState(() {
-              isChecked = value!;
-            });
-            widget.onChanged(value!);
-          },
-        ),
-        const Text("Remember me",
-        style: TextStyle(color: Colors.white,
-        fontFamily: 'Inter',))
-        ]
-    ),
+                borderRadius: BorderRadius.circular(5.0)),
+            checkColor: Colors.white,
+            fillColor: MaterialStateProperty.all(Colors.blue),
+            value: isChecked,
+            onChanged: (value) {
+              setState(
+                () {
+                  isChecked = value!;
+                },
+              );
+              widget.onChanged(value!);
+            },
+          ),
+          const Text(
+            "Remember me",
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Inter',
+            ),
+          )
+        ],
+      ),
     );
   }
 }

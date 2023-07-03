@@ -1,18 +1,12 @@
 import 'dart:ui';
-import 'package:login_page/components/custom_checkbox.dart'; // Waiting on confirmation for third party login screen or we use custom ui*
 import 'package:flutter/material.dart';
 import 'package:login_page/components/button.dart';
-import 'package:login_page/components/textfield.dart'; // Waiting on confirmation for third party login screen or we use custom ui*
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key});
-
-  //Grabs the input from user in the text fields
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
-  final accessCodeController = TextEditingController();
+  // ignore: use_key_in_widget_constructors
+  const LoginPage({Key? key});
 
   //Sign User In Method
   void signUserIn() {}
@@ -55,86 +49,54 @@ class LoginPage extends StatelessWidget {
 
             // Centers
 
-            child: Center(
-              // Lines up in column
-              child: SingleChildScrollView(
-                child: Column(
-                  // Everything inside the column
-                  children: [
-                    const SizedBox(height: 75),
-                    // logo
-                    Container(
-                        constraints: const BoxConstraints(
-                            maxWidth: 150), // Set the maximum width
-                        width: currentWidth * .8,
-                        child: Image.asset('assets/images/dark_e.png')),
-                    // Space between things
-                    const SizedBox(height: 40),
+            // Lines up in column
+            child: Container(
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                // Everything inside the column
+                children: [
+                  const SizedBox(height: 75),
+                  // logo
+                  Container(
+                      constraints: const BoxConstraints(
+                          maxWidth: 150), // Set the maximum width
+                      width: currentWidth * .8,
+                      child:
+                          Image.network('https://i.ibb.co/7RjG8BR/dark-e.png')),
+                  //child: Image.asset('assets/images/dark_e.png')),
+                  // Space between things
+                  const SizedBox(height: 40),
 
-                    const Text(
-                      'Welcome',
-                      style: TextStyle(
-                        // Shadows behind Welcome Text
-                        shadows: [
-                          Shadow(
-                            blurRadius: 6.0, // shadow blur
-                            color:
-                                Color.fromARGB(83, 48, 48, 48), // shadow color
-                            offset:
-                                Offset(0.4, 5), // how much shadow will be shown
-                          ),
-                        ],
-                        fontFamily: "Inter",
-                        letterSpacing: 5,
-                        color: Colors.white,
-                        fontSize: 27,
+                  const Text(
+                    'Welcome',
+                    style: TextStyle(
+                      // Shadows behind Welcome Text
+                      shadows: [
+                        Shadow(
+                          blurRadius: 6.0, // shadow blur
+                          color: Color.fromARGB(83, 48, 48, 48), // shadow color
+                          offset:
+                              Offset(0.4, 5), // how much shadow will be shown
+                        ),
+                      ],
+                      fontFamily: "Inter",
+                      letterSpacing: 5,
+                      color: Colors.white,
+                      fontSize: 27,
+                    ),
+                  ),
+
+                  const Spacer(), // Expands to fill the remaining space between the Welcome widget and the sign in widget
+                  Align(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 70.0),
+                      child: CustomButton(
+                        onTap: signUserIn,
                       ),
                     ),
-
-                    const SizedBox(height: 300),
-
-                    /*CustomTextField(
-                    controller: accessCodeController,
-                    obscureText: false,
-                    prefixIcon: const Icon(Icons.layers),
-                    labelText: 'Access Code',
-                    ),
-
-                    const SizedBox(height: 21),
-                    
-                    CustomTextField(
-                      controller: usernameController,
-                      obscureText: false,
-                      prefixIcon: const Icon(Icons.person),
-                      labelText: 'Username',
-                    ),
-
-                    const SizedBox(height: 21),
-
-                    CustomTextField(
-                      controller: passwordController,
-                      obscureText: true,
-                      prefixIcon: const Icon(Icons.lock),
-                      labelText: 'Password',
-                    ),
-
-                    const SizedBox(height: 20),
-
-                    CustomCheckbox(
-                      isChecked: false, // Provide the initial checked state
-                      onChanged: (bool value) {
-                        // Handle the onChanged event
-                        // You can update the state or perform any necessary actions here
-                      },
-                    ),*/
-
-                    CustomButton(
-                      onTap: signUserIn,
-                    ),
-
-                    const SizedBox(height: 50)
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
