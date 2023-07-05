@@ -23,6 +23,10 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
+            child: Container(
+            decoration: const BoxDecoration (
+               color: Color.fromARGB(255, 7, 0, 17)
+            ),
               child: WaveWidget(
                   config: CustomConfig(
                       gradients: [
@@ -41,7 +45,7 @@ class LoginPage extends StatelessWidget {
                       durations: [5000, 6000, 7000],
                       heightPercentages: [0.20, 0.30, 0.50],
                       blur: const MaskFilter.blur(BlurStyle.solid, 500)),
-                  size: const Size(double.infinity, double.infinity))),
+                  size: const Size(double.infinity, double.infinity)))),
 
           // Places a blur over the background^
           BackdropFilter(
@@ -72,16 +76,16 @@ class LoginPage extends StatelessWidget {
                     'Welcome',
                     style: TextStyle(
                       // Shadows behind Welcome Text
-                      shadows: [
-                        Shadow(
-                          blurRadius: 6.0, // shadow blur
-                          color: Color.fromARGB(83, 48, 48, 48), // shadow color
-                          offset:
-                              Offset(0.4, 5), // how much shadow will be shown
-                        ),
-                      ],
+                      // shadows: [
+                      //   Shadow(
+                      //     blurRadius: 6.0, // shadow blur
+                      //     color: Color.fromARGB(83, 48, 48, 48), // shadow color
+                      //     offset:
+                      //         Offset(0.4, 5), // how much shadow will be shown
+                      //   ),
+                      //],
                       fontFamily: "Inter",
-                      letterSpacing: 5,
+                      letterSpacing: 3,
                       color: Colors.white,
                       fontSize: 27,
                     ),

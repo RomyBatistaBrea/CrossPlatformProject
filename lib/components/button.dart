@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         //constraints: const BoxConstraints(maxWidth: 185, minWidth: 185),
-        width: 185,
+        width: 200,
         padding: const EdgeInsets.all(23),
         margin: const EdgeInsets.symmetric(horizontal: 115),
         decoration: BoxDecoration(
@@ -20,10 +20,11 @@ class CustomButton extends StatelessWidget {
         ),
         child: const Center(
           child: Text(
-            'Secure Log In',
+            'Log In',
             style: TextStyle(
+                fontFamily: 'inter',
                 color: Colors.white, 
-                fontWeight: FontWeight.bold, fontSize: 16),
+                 fontSize: 20),
           ),
         ),
       ),
