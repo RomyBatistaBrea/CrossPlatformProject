@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/theme/light_theme.dart';
 import 'package:login_page/theme/dark_theme.dart';
-import 'pages/login_page.dart';
+import 'pages/login.dart';
 
 void main() {
   runApp(const MyApp());

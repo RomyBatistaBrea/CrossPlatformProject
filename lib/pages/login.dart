@@ -31,14 +31,14 @@ class LoginPage extends StatelessWidget {
                   child: WaveWidget(
                       config: CustomConfig(
                           gradients: [
-                            [Colors.blue, Colors.purpleAccent],
+                            [Theme.of(context).colorScheme.onPrimary, Theme.of(context).colorScheme.onSecondary],
                             [
-                              const Color.fromARGB(255, 224, 165, 235),
-                              const Color.fromARGB(255, 126, 28, 60)
+                              Theme.of(context).colorScheme.tertiary,
+                              Theme.of(context).colorScheme.onTertiary,
                             ],
                             [
-                              const Color.fromARGB(255, 74, 133, 163),
-                              Colors.deepPurple
+                              Theme.of(context).colorScheme.primaryContainer,
+                              Theme.of(context).colorScheme.onPrimaryContainer,
                             ],
                           ],
                           gradientBegin: Alignment.centerLeft,
@@ -50,9 +50,7 @@ class LoginPage extends StatelessWidget {
 
           // Places a blur over the background^
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
-
-            // Centers
+            filter: ImageFilter.blur(sigmaX: 17, sigmaY: 17),
 
             // Lines up in column
             child: Container(
@@ -76,15 +74,6 @@ class LoginPage extends StatelessWidget {
                   const Text(
                     'Welcome',
                     style: TextStyle(
-                      // Shadows behind Welcome Text
-                      // shadows: [
-                      //   Shadow(
-                      //     blurRadius: 6.0, // shadow blur
-                      //     color: Color.fromARGB(83, 48, 48, 48), // shadow color
-                      //     offset:
-                      //         Offset(0.4, 5), // how much shadow will be shown
-                      //   ),
-                      //],
                       fontFamily: "Inter",
                       letterSpacing: 3,
                       color: Colors.white,
