@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/theme/light_theme.dart';
+import 'package:login_page/theme/dark_theme.dart';
 import 'pages/login_page.dart';
 
 void main() {
@@ -11,9 +13,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      home: const LoginPage(),
     );
   }
 }

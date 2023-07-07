@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:login_page/components/button.dart';
+import 'package:login_page/components/login_button.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
@@ -23,29 +23,28 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Container(
-            decoration: const BoxDecoration (
-               color: Color.fromARGB(255, 7, 0, 17)
-            ),
-              child: WaveWidget(
-                  config: CustomConfig(
-                      gradients: [
-                        [Colors.blue, Colors.purpleAccent],
-                        [
-                          const Color.fromARGB(255, 224, 165, 235),
-                          const Color.fromARGB(255, 126, 28, 60)
-                        ],
-                        [
-                          const Color.fromARGB(255, 74, 133, 163),
-                          Colors.deepPurple
-                        ],
-                      ],
-                      gradientBegin: Alignment.centerLeft,
-                      gradientEnd: Alignment.centerRight,
-                      durations: [5000, 6000, 7000],
-                      heightPercentages: [0.20, 0.30, 0.50],
-                      blur: const MaskFilter.blur(BlurStyle.solid, 500)),
-                  size: const Size(double.infinity, double.infinity)))),
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor),
+                  child: WaveWidget(
+                      config: CustomConfig(
+                          gradients: [
+                            [Colors.blue, Colors.purpleAccent],
+                            [
+                              const Color.fromARGB(255, 224, 165, 235),
+                              const Color.fromARGB(255, 126, 28, 60)
+                            ],
+                            [
+                              const Color.fromARGB(255, 74, 133, 163),
+                              Colors.deepPurple
+                            ],
+                          ],
+                          gradientBegin: Alignment.centerLeft,
+                          gradientEnd: Alignment.centerRight,
+                          durations: [5000, 6000, 7000],
+                          heightPercentages: [0.20, 0.30, 0.50],
+                          blur: const MaskFilter.blur(BlurStyle.solid, 500)),
+                      size: const Size(double.infinity, double.infinity)))),
 
           // Places a blur over the background^
           BackdropFilter(
@@ -92,12 +91,10 @@ class LoginPage extends StatelessWidget {
                   ),
 
                   const Spacer(), // Expands to fill the remaining space between the Welcome widget and the sign in widget
-                  Align(
+                  const Align(
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 70.0),
-                      child: CustomButton(
-                        onTap: signUserIn,
-                      ),
+                      padding: EdgeInsets.only(bottom: 70.0),
+                      child: CustomButton(),
                     ),
                   ),
                 ],
