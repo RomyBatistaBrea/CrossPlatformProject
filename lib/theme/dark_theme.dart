@@ -8,8 +8,8 @@ ThemeData darkTheme = ThemeData(
     onSecondary: const Color.fromARGB(166, 49, 160, 175), // 1/2 Wave color
     tertiary: const Color.fromARGB(173, 77, 19, 185), // 1/2 Wave color
     onTertiary: const Color.fromARGB(172, 153, 70, 14), // 1/2 Wave color
-    primaryContainer: const Color.fromARGB(153, 160, 31, 185), // 1/2 Wave color
-    onPrimaryContainer: const Color.fromARGB(172, 46, 106, 146), // 1/2 Wave color
+    primaryContainer: const Color.fromARGB(172, 46, 106, 146), // 1/2 Wave color
+    onPrimaryContainer: const Color.fromARGB(153, 160, 31, 185), // 1/2 Wave color
     
     brightness: Brightness.dark,
   ),

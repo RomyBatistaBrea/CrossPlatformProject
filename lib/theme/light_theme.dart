@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 ThemeData lightTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch().copyWith(
     primary: Colors.white, // Fonts color
-    secondary: const Color.fromRGBO(135, 210, 193, 1),
-    onPrimary: const Color.fromARGB(255, 58, 193, 211),
-    onSecondary: const Color.fromARGB(255, 206, 40, 76),
-    tertiary: const Color.fromARGB(255, 192, 88, 18),
-    onTertiary: const Color.fromARGB(255, 91, 22, 219),
-    primaryContainer: const Color.fromARGB(255, 60, 138, 190),
-    onPrimaryContainer: const Color.fromARGB(255, 205, 41, 238),
+    secondary: const Color.fromARGB(255, 53, 221, 182),
+    onPrimary: const Color.fromARGB(255, 68, 227, 248),
+    onSecondary: const Color.fromARGB(255, 250, 48, 92),
+    tertiary: const Color.fromARGB(255, 245, 112, 23),
+    onTertiary: const Color.fromARGB(255, 103, 26, 247),
+    primaryContainer: const Color.fromARGB(255, 77, 178, 245),
+    onPrimaryContainer: const Color.fromARGB(255, 214, 42, 248),
 
     brightness: Brightness.light, // Used for Buttons
   ),
