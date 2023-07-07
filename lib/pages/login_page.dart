@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:login_page/components/login_button.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
+//import 'package:table_calendar/table_calendar.dart';
 
 class LoginPage extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
@@ -14,6 +15,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width;
+    DateTime today = DateTime.now();
 
     //Entire Screen
     return Scaffold(
@@ -89,6 +91,18 @@ class LoginPage extends StatelessWidget {
                       fontSize: 27,
                     ),
                   ),
+
+                  // TableCalendar(
+                  //   rowH
+                  //     focusedDay: today,
+                  //     firstDay: DateTime.utc(2023, 7, 1),
+                  //     lastDay: DateTime.utc(2023, 10, 2)),
+                  //     calendarController: _calendarController,
+                  //     // Add more configuration options as needed
+                  //     onDaySelected: (date, events, holidays) {
+                  //       // Handle day selection here
+                  //       _showEventDetails(date); // Call function to show event details
+                  //     },
 
                   const Spacer(), // Expands to fill the remaining space between the Welcome widget and the sign in widget
                   const Align(

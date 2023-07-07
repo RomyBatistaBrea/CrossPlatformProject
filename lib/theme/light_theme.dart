@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 ThemeData lightTheme = ThemeData(
-  brightness: Brightness.light,
-  colorScheme: const ColorScheme.dark(
+  colorScheme: ColorScheme.fromSwatch().copyWith(
     primary: Colors.white, // Fonts color
-    secondary: Color.fromRGBO(135, 210, 193, 1), // Used for Buttons
+    secondary: const Color.fromRGBO(135, 210, 193, 1),
+    brightness: Brightness.light, // Used for Buttons
   ),
-  scaffoldBackgroundColor:
-      const Color(0x343B7500), // Sets the background color behind the waves
+  scaffoldBackgroundColor: const Color.fromARGB(
+      144, 51, 55, 112), // Sets the background color behind the waves
 );
