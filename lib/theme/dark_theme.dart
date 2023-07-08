@@ -9,11 +9,11 @@ ThemeData darkTheme = ThemeData(
     tertiary: const Color.fromARGB(173, 77, 19, 185), // 1/2 Wave color
     onTertiary: const Color.fromARGB(172, 153, 70, 14), // 1/2 Wave color
     primaryContainer: const Color.fromARGB(172, 46, 106, 146), // 1/2 Wave color
-    onPrimaryContainer: const Color.fromARGB(153, 160, 31, 185), // 1/2 Wave color
-    
+    onPrimaryContainer:
+        const Color.fromARGB(153, 160, 31, 185), // 1/2 Wave color
+
     brightness: Brightness.dark,
   ),
   scaffoldBackgroundColor: const Color.fromARGB(
       255, 28, 20, 48), // Sets the background color behind the waves
 );
-

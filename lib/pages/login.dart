@@ -5,9 +5,9 @@ import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 //import 'package:table_calendar/table_calendar.dart';
 
-class LoginPage extends StatelessWidget {
+class Login extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
-  const LoginPage({Key? key});
+  const Login({Key? key});
 
   //Sign User In Method
   void signUserIn() {}
@@ -15,6 +15,10 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width;
+    final String logoUrl =
+        MediaQuery.of(context).platformBrightness == Brightness.light
+            ? 'https://i.ibb.co/7RjG8BR/dark-e.png'
+            : 'https://i.ibb.co/k3Ndqpd/light-e.png';
     DateTime today = DateTime.now();
 
     //Entire Screen
@@ -25,28 +29,35 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).scaffoldBackgroundColor),
-                  child: WaveWidget(
-                      config: CustomConfig(
-                          gradients: [
-                            [Theme.of(context).colorScheme.onPrimary, Theme.of(context).colorScheme.onSecondary],
-                            [
-                              Theme.of(context).colorScheme.tertiary,
-                              Theme.of(context).colorScheme.onTertiary,
-                            ],
-                            [
-                              Theme.of(context).colorScheme.primaryContainer,
-                              Theme.of(context).colorScheme.onPrimaryContainer,
-                            ],
-                          ],
-                          gradientBegin: Alignment.centerLeft,
-                          gradientEnd: Alignment.centerRight,
-                          durations: [5000, 6000, 7000],
-                          heightPercentages: [0.20, 0.30, 0.50],
-                          blur: const MaskFilter.blur(BlurStyle.solid, 500)),
-                      size: const Size(double.infinity, double.infinity)))),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Theme.of(context).scaffoldBackgroundColor),
+              child: WaveWidget(
+                config: CustomConfig(
+                  gradients: [
+                    [
+                      Theme.of(context).colorScheme.onPrimary,
+                      Theme.of(context).colorScheme.onSecondary
+                    ],
+                    [
+                      Theme.of(context).colorScheme.tertiary,
+                      Theme.of(context).colorScheme.onTertiary,
+                    ],
+                    [
+                      Theme.of(context).colorScheme.primaryContainer,
+                      Theme.of(context).colorScheme.onPrimaryContainer,
+                    ],
+                  ],
+                  gradientBegin: Alignment.centerLeft,
+                  gradientEnd: Alignment.centerRight,
+                  durations: [5000, 6000, 7000],
+                  heightPercentages: [0.20, 0.30, 0.50],
+                  blur: const MaskFilter.blur(BlurStyle.solid, 500),
+                ),
+                size: const Size(double.infinity, double.infinity),
+              ),
+            ),
+          ),
 
           // Places a blur over the background^
           BackdropFilter(
@@ -65,9 +76,7 @@ class LoginPage extends StatelessWidget {
                       constraints: const BoxConstraints(
                           maxWidth: 150), // Set the maximum width
                       width: currentWidth * .8,
-                      child:
-                          Image.network('https://i.ibb.co/7RjG8BR/dark-e.png')),
-                  //child: Image.asset('assets/images/dark_e.png')),
+                      child: Image.network(logoUrl)),
                   // Space between things
                   const SizedBox(height: 40),
 
