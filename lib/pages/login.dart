@@ -19,7 +19,6 @@ class Login extends StatelessWidget {
         MediaQuery.of(context).platformBrightness == Brightness.light
             ? 'https://i.ibb.co/7RjG8BR/dark-e.png'
             : 'https://i.ibb.co/k3Ndqpd/light-e.png';
-    DateTime today = DateTime.now();
 
     //Entire Screen
     return Scaffold(
@@ -89,18 +88,6 @@ class Login extends StatelessWidget {
                       fontSize: 27,
                     ),
                   ),
-
-                  // TableCalendar(
-                  //   rowH
-                  //     focusedDay: today,
-                  //     firstDay: DateTime.utc(2023, 7, 1),
-                  //     lastDay: DateTime.utc(2023, 10, 2)),
-                  //     calendarController: _calendarController,
-                  //     // Add more configuration options as needed
-                  //     onDaySelected: (date, events, holidays) {
-                  //       // Handle day selection here
-                  //       _showEventDetails(date); // Call function to show event details
-                  //     },
 
                   const Spacer(), // Expands to fill the remaining space between the Welcome widget and the sign in widget
                   const Align(

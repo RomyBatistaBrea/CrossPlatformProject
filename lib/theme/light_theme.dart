@@ -13,7 +13,7 @@ ThemeData lightTheme = ThemeData(
 
     brightness: Brightness.light, // Used for Buttons
   ),
-  scaffoldBackgroundColor: Colors.white,
+  scaffoldBackgroundColor: const Color.fromARGB(96, 8, 2, 65),
   // Color.fromARGB(
   //     144, 51, 55, 112), // Sets the background color behind the waves
 );
