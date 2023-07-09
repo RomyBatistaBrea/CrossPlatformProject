@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:login_page/components/login_button.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
-//import 'package:table_calendar/table_calendar.dart';
 
 class Login extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
@@ -43,15 +42,19 @@ class Login extends StatelessWidget {
                       Theme.of(context).colorScheme.onTertiary,
                     ],
                     [
-                      Theme.of(context).colorScheme.primaryContainer,
                       Theme.of(context).colorScheme.onPrimaryContainer,
+                      Theme.of(context).colorScheme.primaryContainer,
+                    ],
+                    [
+                      Theme.of(context).colorScheme.onTertiary,
+                      Theme.of(context).colorScheme.tertiary,
                     ],
                   ],
                   gradientBegin: Alignment.centerLeft,
                   gradientEnd: Alignment.centerRight,
-                  durations: [5000, 6000, 7000],
-                  heightPercentages: [0.20, 0.30, 0.50],
-                  blur: const MaskFilter.blur(BlurStyle.solid, 500),
+                  durations: [5000, 7000, 6000, 5000],
+                  heightPercentages: [0.33, 0.33, 0.45, 0.6],
+                  //blur: const MaskFilter.blur(BlurStyle.solid, 500),
                 ),
                 size: const Size(double.infinity, double.infinity),
               ),
@@ -60,7 +63,7 @@ class Login extends StatelessWidget {
 
           // Places a blur over the background^
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 17, sigmaY: 17),
+            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 30),
 
             // Lines up in column
             child: Container(
