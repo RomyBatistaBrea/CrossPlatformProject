@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/theme/light_theme.dart';
 import 'package:login_page/theme/dark_theme.dart';
-import 'pages/login.dart';
-import 'pages/home.dart';
+import 'pages/Login/login.dart';
+import 'pages/Home/home.dart';
 
 void main() {
   runApp(const MyApp());

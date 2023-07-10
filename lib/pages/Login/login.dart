@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:login_page/components/login_button.dart';
+import 'package:login_page/pages/Login/login_components/login_button.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
