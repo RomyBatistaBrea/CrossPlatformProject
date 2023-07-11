@@ -1,8 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:login_page/pages/Login/login_components/login_button.dart';
-import 'package:wave/config.dart';
-import 'package:wave/wave.dart';
+import 'package:login_page/global_components/waves.dart';
 
 class Login extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
@@ -14,10 +13,10 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width;
-    final String logoUrl =
+    final String imageSite =
         MediaQuery.of(context).platformBrightness == Brightness.light
-            ? 'https://i.ibb.co/7RjG8BR/dark-e.png'
-            : 'https://i.ibb.co/k3Ndqpd/light-e.png';
+            ? 'assets/images/dark_e.png'
+            : 'assets/images/light_e.png';
 
     //Entire Screen
     return Scaffold(
@@ -26,44 +25,11 @@ class Login extends StatelessWidget {
 
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Theme.of(context).scaffoldBackgroundColor),
-              child: WaveWidget(
-                config: CustomConfig(
-                  gradients: [
-                    [
-                      Theme.of(context).colorScheme.onPrimary,
-                      Theme.of(context).colorScheme.onSecondary
-                    ],
-                    [
-                      Theme.of(context).colorScheme.tertiary,
-                      Theme.of(context).colorScheme.onTertiary,
-                    ],
-                    [
-                      Theme.of(context).colorScheme.onPrimaryContainer,
-                      Theme.of(context).colorScheme.primaryContainer,
-                    ],
-                    [
-                      Theme.of(context).colorScheme.onTertiary,
-                      Theme.of(context).colorScheme.tertiary,
-                    ],
-                  ],
-                  gradientBegin: Alignment.centerLeft,
-                  gradientEnd: Alignment.centerRight,
-                  durations: [5000, 7000, 6000, 5000],
-                  heightPercentages: [0.33, 0.33, 0.45, 0.6],
-                  //blur: const MaskFilter.blur(BlurStyle.solid, 500),
-                ),
-                size: const Size(double.infinity, double.infinity),
-              ),
-            ),
-          ),
+          const Positioned.fill(child: WavesBackground()),
 
           // Places a blur over the background^
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 30),
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 8),
 
             // Lines up in column
             child: Container(
@@ -78,7 +44,7 @@ class Login extends StatelessWidget {
                       constraints: const BoxConstraints(
                           maxWidth: 150), // Set the maximum width
                       width: currentWidth * .8,
-                      child: Image.network(logoUrl)),
+                      child: Image.asset(imageSite)),
                   // Space between things
                   const SizedBox(height: 40),
 

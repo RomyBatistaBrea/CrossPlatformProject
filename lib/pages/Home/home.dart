@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login_page/pages/Home/home_components/waves.dart';
+import 'package:login_page/global_components/waves.dart';
 import 'package:login_page/pages/Home/home_components/draggable_sheet.dart';
-import 'package:table_calendar/table_calendar.dart';
 import 'package:login_page/pages/Home/home_components/weekdays.dart';
+import 'package:table_calendar/table_calendar.dart';
 import 'dart:ui';
 import 'package:intl/intl.dart';
 
@@ -45,12 +45,12 @@ class _HomeState extends State<Home> {
   }
 
   Widget content() {
-    const String logoUrl = 'https://i.ibb.co/dMPYLQ2/dark-evimero.png';
+    const String imageSite = 'assets/images/light_evimero.png';
 
     return Stack(children: [
       const Positioned.fill(child: WavesBackground()),
       BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 8),
 
           // Lines up in column
           child: Container(
@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
             width: 147,
             height: 73,
             alignment: Alignment.topLeft,
-            child: Image.network(logoUrl),
+            child: Image.asset(imageSite),
           ),
         ]),
         Padding(

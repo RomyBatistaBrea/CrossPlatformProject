@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_page/pages/profile_screen.dart';
+import 'package:login_page/pages/Profile/profile.dart';
 import 'package:login_page/theme/light_theme.dart';
 import 'package:login_page/theme/dark_theme.dart';
 import 'pages/Login/login.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const ProfileScreen(),
+      home: const Home(),
     );
   }
 }

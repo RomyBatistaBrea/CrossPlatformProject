@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_page/pages/Home/home_components/waves.dart';
+import 'package:login_page/global_components/waves.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
       ),
       body: Stack(
-        children:[Container(height: MediaQuery.of(context).size.height, child: Positioned.fill(child: WavesBackground(),)), SingleChildScrollView(
+        children:[SizedBox(height: MediaQuery.of(context).size.height, child: const Positioned.fill(child: WavesBackground(),)), SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -27,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
                   height: 120,
                   child: CircleAvatar(
                     backgroundImage: AssetImage(
-                        '/Users/jayr/Documents/GitHub/team-collaboration/assets/images/kirikopfp.jpeg'),
+                        'assets/images/kirikopfp.jpeg'),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -49,15 +49,15 @@ class ProfileScreen extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 50, 221, 203),
+                        side: BorderSide.none,
+                        shape: const StadiumBorder()),
                     child: const Text('Edit Profile',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.normal)),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 50, 221, 203),
-                        side: BorderSide.none,
-                        shape: const StadiumBorder()),
                   ),
                 ),
                 const SizedBox(height: 30),
