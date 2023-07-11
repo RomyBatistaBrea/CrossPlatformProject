@@ -22,60 +22,59 @@ class WavesBackground extends StatelessWidget {
   */
 
     return Container(
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-              colors: [Theme.of(context).colorScheme.outline, Theme.of(context).colorScheme.outlineVariant
-            
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+            Theme.of(context).colorScheme.outline,
+            Theme.of(context).colorScheme.outlineVariant
           ])),
       child: WaveWidget(
         config: CustomConfig(
-          gradients: [
-            [
-              Theme.of(context).colorScheme.onPrimary,
-              Theme.of(context).colorScheme.onSecondary
+            gradients: [
+              [
+                Theme.of(context).colorScheme.onPrimary,
+                Theme.of(context).colorScheme.onSecondary
+              ],
+              [
+                Theme.of(context).colorScheme.tertiary,
+                Theme.of(context).colorScheme.onTertiary,
+              ],
+              [
+                Theme.of(context).colorScheme.primaryContainer,
+                Theme.of(context).colorScheme.onPrimaryContainer,
+              ],
+              [
+                Theme.of(context).colorScheme.onTertiary,
+                Theme.of(context).colorScheme.tertiary,
+              ],
+              [
+                Theme.of(context).colorScheme.onSecondary,
+                Theme.of(context).colorScheme.onPrimary,
+              ],
+              [
+                Theme.of(context).colorScheme.onPrimary,
+                Theme.of(context).colorScheme.onSecondary
+              ],
+              [
+                Theme.of(context).colorScheme.tertiary,
+                Theme.of(context).colorScheme.onTertiary,
+              ],
+              [
+                Theme.of(context).colorScheme.onPrimaryContainer,
+                Theme.of(context).colorScheme.primaryContainer,
+              ],
+              [
+                Theme.of(context).colorScheme.onPrimary,
+                Theme.of(context).colorScheme.onSecondary,
+              ],
             ],
-            [
-              Theme.of(context).colorScheme.tertiary,
-              Theme.of(context).colorScheme.onTertiary,
-            ],
-            [
-              Theme.of(context).colorScheme.primaryContainer,
-              Theme.of(context).colorScheme.onPrimaryContainer,
-            ],
-            [
-              Theme.of(context).colorScheme.onTertiary,
-              Theme.of(context).colorScheme.tertiary,
-            ],
-            [
-              Theme.of(context).colorScheme.onSecondary,
-              Theme.of(context).colorScheme.onPrimary,
-            ],
-            [
-              Theme.of(context).colorScheme.onPrimary,
-              Theme.of(context).colorScheme.onSecondary
-            ],
-            [
-              Theme.of(context).colorScheme.tertiary,
-              Theme.of(context).colorScheme.onTertiary,
-            ],
-            [
-              Theme.of(context).colorScheme.onPrimaryContainer,
-              Theme.of(context).colorScheme.primaryContainer,
-            ],
-            [
-              Theme.of(context).colorScheme.onPrimary,
-              Theme.of(context).colorScheme.onSecondary,
-            ],
-            
-          ],
-          gradientBegin: Alignment.centerLeft,
-          gradientEnd: Alignment.centerRight,
-          durations: [19000, 15467, 24256, 13434, 18462, 16452, 12435, 26236],
-          heightPercentages: [0.4, 0.46, 0.54, 0.6, 0.67, 0.73, 0.8, 0.87],
-          blur: const MaskFilter.blur(BlurStyle.normal, 3)
-        ),
+            gradientBegin: Alignment.centerLeft,
+            gradientEnd: Alignment.centerRight,
+            durations: [19000, 15467, 24256, 13434, 18462, 16452, 12435, 26236],
+            heightPercentages: [0.4, 0.46, 0.54, 0.6, 0.67, 0.73, 0.8, 0.87],
+            blur: const MaskFilter.blur(BlurStyle.normal, 3)),
         size: const Size(double.infinity, double.infinity),
         waveAmplitude: 30,
       ),

@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.fromLTRB(22, 0, 20, 0),
             child: calendarContent())
       ]),
-      DraggableSheet()
+      const DraggableSheet()
     ]);
   }
 
