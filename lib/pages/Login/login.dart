@@ -1,19 +1,21 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:login_page/pages/Login/login_components/login_button.dart';
-import 'package:login_page/global_components/waves.dart';
 import 'package:login_page/pages/Login/login_components/single_wave.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Login extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
   const Login({Key? key});
 
   //Sign User In Method
-  void signUserIn() {}
+  void _signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
+    final Uri uri = Uri.parse('https:www.okta.com/products/authentication/');
     final currentWidth = MediaQuery.of(context).size.width;
     final String imageSite =
         MediaQuery.of(context).platformBrightness == Brightness.light
@@ -67,7 +69,124 @@ class Login extends StatelessWidget {
                               width: 22,
                               height: 22,
                               child: GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return Theme(
+                                        data: Theme.of(context).copyWith(
+                                            dialogBackgroundColor:
+                                                Theme.of(context)
+                                                    .scaffoldBackgroundColor),
+                                        child: AlertDialog(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          title: Text(
+                                            'Secure Login',
+                                            style: TextStyle(
+                                                fontSize: 25,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .primary),
+                                          ),
+                                          content: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                'Your login credentials are securely managed.',
+                                                style: TextStyle(
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .primary),
+                                              ),
+                                              const SizedBox(height: 30),
+                                              RichText(
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: [
+                                                    TextSpan(
+                                                        text: 'Powered by ',
+                                                        style: TextStyle(
+                                                            fontSize: 14,
+                                                            color: Theme.of(
+                                                                    context)
+                                                                .colorScheme
+                                                                .primary,
+                                                            fontFamily: 'inter',
+                                                            decoration:
+                                                                TextDecoration
+                                                                    .underline,
+                                                            decorationStyle:
+                                                                TextDecorationStyle
+                                                                    .solid,
+                                                            decorationColor:
+                                                                Colors.white)),
+                                                    TextSpan(
+                                                      text: 'Okta',
+                                                      style: const TextStyle(
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.blue,
+                                                        fontFamily: 'inter',
+                                                        decoration:
+                                                            TextDecoration
+                                                                .underline,
+                                                        decorationStyle:
+                                                            TextDecorationStyle
+                                                                .solid,
+                                                        decorationColor:
+                                                            Colors.white,
+                                                        // Set single line style,
+                                                      ),
+                                                      recognizer:
+                                                          TapGestureRecognizer()
+                                                            ..onTap = (() {
+                                                              launchUrl(uri);
+                                                            }),
+                                                    ),
+                                                    TextSpan(
+                                                      text:
+                                                          ' for secure authentication.',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color:
+                                                              Theme.of(context)
+                                                                  .colorScheme
+                                                                  .primary,
+                                                          fontFamily: 'inter',
+                                                          decoration:
+                                                              TextDecoration
+                                                                  .underline,
+                                                          decorationStyle:
+                                                              TextDecorationStyle
+                                                                  .solid,
+                                                          decorationColor:
+                                                              Colors.white),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          actions: [
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text('Close'),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
                                 child: const Icon(
                                   CupertinoIcons.question_circle,
                                   size: 22.0, // Adjust the size as needed

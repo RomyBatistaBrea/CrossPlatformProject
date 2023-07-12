@@ -8,8 +8,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 130, // <-- Button width
-      height: 50, // <-- Button height
+      width: 190, // <-- Button width
+      height: 57, // <-- Button height
       child: ElevatedButton(
         onPressed: () {
           //executes when the button is pressed
@@ -18,14 +18,14 @@ class CustomButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: Theme.of(context).colorScheme.surface,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(15),
           ),
         ),
         child: Text(
-          'Login',
+          'Secure Login',
           style: TextStyle(
             fontFamily: 'inter',
-            fontSize: 19,
+            fontSize: 17,
             letterSpacing: 1,
             color: Theme.of(context)
                 .colorScheme

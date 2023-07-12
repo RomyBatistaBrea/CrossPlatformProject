@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  url_launcher: ^6.1.12
   table_calendar: ^3.0.8
   cupertino_icons: ^1.0.5
   wave: ^0.2.2
