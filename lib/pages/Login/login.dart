@@ -1,7 +1,9 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_page/pages/Login/login_components/login_button.dart';
 import 'package:login_page/global_components/waves.dart';
+import 'package:login_page/pages/Login/login_components/single_wave.dart';
 
 class Login extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
@@ -25,11 +27,11 @@ class Login extends StatelessWidget {
 
       body: Stack(
         children: [
-          const Positioned.fill(child: WavesBackground()),
+          const Positioned.fill(child: SingleWave()),
 
           // Places a blur over the background^
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 8),
+            filter: ImageFilter.blur(sigmaX: 60, sigmaY: 90),
 
             // Lines up in column
             child: Container(
@@ -38,23 +40,60 @@ class Login extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 // Everything inside the column
                 children: [
-                  const SizedBox(height: 75),
+                  const SizedBox(height: 25),
+
+                  SizedBox(
+                      child: Padding(
+                          padding: const EdgeInsets.all(35),
+                          child: Row(children: [
+                            Container(
+                              width: 33,
+                              height: 33,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    Theme.of(context).colorScheme.outline,
+                                    Theme.of(context).colorScheme.onSecondary
+                                  ],
+                                ),
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            // Drawing
+                            const Spacer(),
+                            SizedBox(
+                              width: 22,
+                              height: 22,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: const Icon(
+                                  CupertinoIcons.question_circle,
+                                  size: 22.0, // Adjust the size as needed
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ) // Adjust the color as needed
+                          ]))),
+
+                  const SizedBox(height: 1),
                   // logo
                   Container(
                       constraints: const BoxConstraints(
-                          maxWidth: 150), // Set the maximum width
+                          maxWidth: 170), // Set the maximum width
                       width: currentWidth * .8,
                       child: Image.asset(imageSite)),
                   // Space between things
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20),
 
                   const Text(
                     'Welcome',
                     style: TextStyle(
                       fontFamily: "Inter",
-                      letterSpacing: 3,
+                      letterSpacing: 5,
                       color: Colors.white,
-                      fontSize: 27,
+                      fontSize: 32,
                     ),
                   ),
 

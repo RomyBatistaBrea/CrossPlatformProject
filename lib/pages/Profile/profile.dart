@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/global_components/waves.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class Profile extends StatelessWidget {
+  const Profile({Key? key}) : super(key: key);
 
   @override
   
