@@ -7,18 +7,25 @@ class WavesBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /* 
+  /*
   - Romy Batista July 9, 2023
 
-  Content is wrapped in a container that lays on top of the scaffold.
-  Contains the WavesBackground widgets where 4 WavesBackground are used.
-  Timing for the WavesBackground are set below.
-  As well as wave colors based on the light_theme.dart and dark_theme.dart files 
-  ***which again, adjust based on the system preferences(Dark / Light Mode)***.
+  The WavesBackground widget creates a wave-like background effect with multiple layers.
 
-  Gradients are set to flow from center left to center right, but can be changed.
-  Height percentage flows from top to bottom, so the lower the percentage, 
-  The more of the container the WavesBackground will take up.
+  The widget is wrapped in a Container that applies a gradient background based on the current theme's color scheme.
+
+  Inside the Container, a WaveWidget is used to generate the wave effect.
+  The WaveWidget's configuration is defined by a CustomConfig, which determines the gradients, timing, and other properties of the waves.
+
+  Gradients: Each wave layer has its own gradient defined by two colors from the current theme's color scheme.
+
+  Timing: The durations list determines the duration of each wave animation in milliseconds.
+  The heightPercentages list determines the vertical position of each wave layer within the Container.
+  A lower percentage value means the wave layer occupies more space vertically.
+
+  Other Properties: The blur property adds a blur effect to the waves using a MaskFilter.
+  The size property sets the size of the WaveWidget to match the dimensions of its parent Container.
+  The waveAmplitude property controls the intensity of the wave effect.
   */
 
     return Container(

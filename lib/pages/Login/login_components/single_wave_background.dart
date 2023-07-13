@@ -7,6 +7,21 @@ class SingleWave extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /*
+  - Romy Batista July 10, 2023
+
+  This widget displays a single wave animation using the 'wave' package.
+  It creates a container with a transparent color as the background,
+  and inside it, a WaveWidget is rendered with a custom configuration.
+
+  The wave animation gradient is defined using the 'onPrimary' and 'onSecondary'
+  colors from the current theme.
+
+  The wave animation spans the entire width and height of its parent container.
+  The wave amplitude is set to 55, controlling the height of the wave peaks.
+
+  Currently only used for login Screen
+  */
     return Container(
       decoration: const BoxDecoration(color: Colors.transparent),
       child: WaveWidget(

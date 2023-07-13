@@ -1,5 +1,6 @@
+import 'package:evimero/constants/font_color.dart';
 import 'package:flutter/material.dart';
-import 'package:login_page/pages/Home/home_components/user_data_model_components.data/event_types.dart';
+import 'package:evimero/pages/Home/home_components/user_data_model_components.data/event_types.dart';
 
 class DraggableSheet extends StatefulWidget {
   const DraggableSheet({super.key});
@@ -13,6 +14,7 @@ class _DraggableSheetState extends State<DraggableSheet> {
   - Romy Batista July 10, 2023
 
   This is the Draggable Scrollable Sheet that holds all the upcoming events for the student's day.
+
   Simply a layer that presents the hours available, classes left, and Hours of study,
   Along with all the matching images for the event type, name of event, and time of the event (Hour:Minutes)
   in a list view builder.
@@ -52,7 +54,7 @@ class _DraggableSheetState extends State<DraggableSheet> {
                         child: Text(
                           '18 Hrs\nFree',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 15),
+                          style: TextStyle(color: fontColor, fontSize: 15),
                         ),
                       ),
                       Spacer(),
@@ -61,7 +63,7 @@ class _DraggableSheetState extends State<DraggableSheet> {
                         child: Text(
                           '3\nClasses',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 15),
+                          style: TextStyle(color: fontColor, fontSize: 15),
                         ),
                       ),
                       Spacer(),
@@ -70,7 +72,7 @@ class _DraggableSheetState extends State<DraggableSheet> {
                         child: Text(
                           '4 Hrs\nStudy',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 15),
+                          style: TextStyle(color: fontColor, fontSize: 15),
                         ),
                       )
                     ],

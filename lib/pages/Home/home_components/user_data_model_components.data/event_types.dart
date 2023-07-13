@@ -16,6 +16,17 @@ class Event extends StatefulWidget {
 }
 
 class _EventState extends State<Event> {
+  /*
+  - Romy Batista July 10, 2023
+
+  This is the Event widget that represents an individual event.
+
+  The widget displays the event type icon, event name, and the time of the event.
+
+  The event type, event name, and event date/time are provided as parameters when creating an instance of this widget.
+
+  The hour and minute values are extracted from the provided DateTime and stored in the state of the widget.
+  */
   int hour = 0;
   int minute = 0;
 

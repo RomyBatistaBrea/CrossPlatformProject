@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_page/global_components/waves.dart';
-import 'package:login_page/pages/Home/home_components/draggable_sheet.dart';
-import 'package:login_page/pages/Home/home_components/weekdays.dart';
+import 'package:evimero/global_components/waves.dart';
+import 'package:evimero/pages/Home/home_components/draggable_sheet.dart';
+import 'package:evimero/pages/Home/home_components/weekdays.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'dart:ui';
 import 'package:intl/intl.dart';
@@ -38,6 +38,27 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    /*
+  - Romy Batista July 10, 2023
+
+  This is the Home screen widget, which displays the main content of the app.
+
+  The screen consists of a stack with a background of waves and a blurred backdrop.
+
+  Inside the stack, there is a column that holds the content of the screen.
+
+  The content includes a logo image, the current month, week day letters, a calendar, and a draggable sheet.
+
+  The logo image is positioned in the top-left corner.
+
+  The current month is displayed as text with a bold font.
+
+  The week day letters are displayed in a row.
+
+  The calendar is displayed using the TableCalendar widget with customized styles.
+
+  The draggable sheet is displayed at the bottom of the screen.
+  */
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: content(),
@@ -66,31 +87,35 @@ class _HomeState extends State<Home> {
             child: Image.asset(imageSite),
           ),
         ]),
-        Padding(
-          padding: const EdgeInsets.only(top: 2, bottom: 10),
-          child: Text(
-            formattedMonth,
-            style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontSize: 21,
-                fontWeight: FontWeight.bold),
-          ),
-        ),
-        Padding(
-            padding: const EdgeInsets.fromLTRB(41, 0, 40, 5),
-            child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 400),
-                child: weekDaysContent())),
-        const Divider(
-          color: Colors.white,
-          height: 20,
-          indent: 48,
-          endIndent: 45,
-          thickness: 1,
-        ),
-        Padding(
-            padding: const EdgeInsets.fromLTRB(22, 0, 20, 0),
-            child: calendarContent())
+        ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 500),
+            child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 2, bottom: 10),
+                child: Text(
+                  formattedMonth,
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                  padding: const EdgeInsets.fromLTRB(41, 0, 40, 5),
+                  child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 400),
+                      child: weekDaysContent())),
+              const Divider(
+                color: Colors.white,
+                height: 20,
+                indent: 48,
+                endIndent: 45,
+                thickness: 1,
+              ),
+              Padding(
+                  padding: const EdgeInsets.fromLTRB(22, 0, 20, 0),
+                  child: calendarContent())
+            ]))
       ]),
       const DraggableSheet()
     ]);

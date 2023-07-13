@@ -1,10 +1,8 @@
 import 'dart:ui';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
+import 'package:evimero/pages/Login/login_components/dialog_box_question_mark.dart';
 import 'package:flutter/material.dart';
-import 'package:login_page/pages/Login/login_components/login_button.dart';
-import 'package:login_page/pages/Login/login_components/single_wave.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:evimero/pages/Login/login_components/sign_in_button.dart';
+import 'package:evimero/pages/Login/login_components/single_wave_background.dart';
 
 class Login extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
@@ -15,7 +13,22 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Uri uri = Uri.parse('https:www.okta.com/products/authentication/');
+    /*
+  - Romy Batista July 12, 2023
+
+  This is the Login screen widget, which displays a login interface.
+
+  It consists of a background with a single wave animation and a blurred overlay.
+
+  The login screen includes a row with a logo and a question mark icon, followed by a welcome message.
+
+  The logo is displayed using an Image.asset widget, which loads the image based on the 'imageSite' value.
+
+  The 'Welcome' text is styled with a custom font family, letter spacing, white color, and font size of 32.
+
+  The login screen ends with a CustomButton widget, which represents the secure login button.
+  */
+
     final currentWidth = MediaQuery.of(context).size.width;
     final String imageSite =
         MediaQuery.of(context).platformBrightness == Brightness.light
@@ -65,134 +78,10 @@ class Login extends StatelessWidget {
                             ),
                             // Drawing
                             const Spacer(),
-                            SizedBox(
+                            const SizedBox(
                               width: 22,
                               height: 22,
-                              child: GestureDetector(
-                                onTap: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return Theme(
-                                        data: Theme.of(context).copyWith(
-                                            dialogBackgroundColor:
-                                                Theme.of(context)
-                                                    .scaffoldBackgroundColor),
-                                        child: AlertDialog(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10)),
-                                          title: Text(
-                                            'Secure Login',
-                                            style: TextStyle(
-                                                fontSize: 25,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .primary),
-                                          ),
-                                          content: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Text(
-                                                'Your login credentials are securely managed.',
-                                                style: TextStyle(
-                                                    color: Theme.of(context)
-                                                        .colorScheme
-                                                        .primary),
-                                              ),
-                                              const SizedBox(height: 30),
-                                              RichText(
-                                                text: TextSpan(
-                                                  style: DefaultTextStyle.of(
-                                                          context)
-                                                      .style,
-                                                  children: [
-                                                    TextSpan(
-                                                        text: 'Powered by ',
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .colorScheme
-                                                                .primary,
-                                                            fontFamily: 'inter',
-                                                            decoration:
-                                                                TextDecoration
-                                                                    .underline,
-                                                            decorationStyle:
-                                                                TextDecorationStyle
-                                                                    .solid,
-                                                            decorationColor:
-                                                                Colors.white)),
-                                                    TextSpan(
-                                                      text: 'Okta',
-                                                      style: const TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: Colors.blue,
-                                                        fontFamily: 'inter',
-                                                        decoration:
-                                                            TextDecoration
-                                                                .underline,
-                                                        decorationStyle:
-                                                            TextDecorationStyle
-                                                                .solid,
-                                                        decorationColor:
-                                                            Colors.white,
-                                                        // Set single line style,
-                                                      ),
-                                                      recognizer:
-                                                          TapGestureRecognizer()
-                                                            ..onTap = (() {
-                                                              launchUrl(uri);
-                                                            }),
-                                                    ),
-                                                    TextSpan(
-                                                      text:
-                                                          ' for secure authentication.',
-                                                      style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              Theme.of(context)
-                                                                  .colorScheme
-                                                                  .primary,
-                                                          fontFamily: 'inter',
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .underline,
-                                                          decorationStyle:
-                                                              TextDecorationStyle
-                                                                  .solid,
-                                                          decorationColor:
-                                                              Colors.white),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          actions: [
-                                            ElevatedButton(
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text('Close'),
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
-                                child: const Icon(
-                                  CupertinoIcons.question_circle,
-                                  size: 22.0, // Adjust the size as needed
-                                  color: Colors.white,
-                                ),
-                              ),
+                              child: QuestionCircle()
                             ) // Adjust the color as needed
                           ]))),
 

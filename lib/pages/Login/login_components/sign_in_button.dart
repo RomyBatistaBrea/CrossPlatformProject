@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -7,6 +8,24 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    /*
+  - Romy Batista July 10, 2023
+
+  This is a custom button widget that displays a "Secure Login" text inside an elevated button.
+  The button has a fixed width of 190 and a height of 57.
+
+  When the button is pressed, it executes the provided onPressed callback,
+  which in this case prints 'Button Pressed' to the console.
+
+  The button's background color is based on the 'surface' color from the current theme,
+  and it has a rounded rectangular shape with a border radius of 15.
+
+  The text inside the button is styled with a custom font family 'inter',
+  font size of 17, letter spacing of 1, and the text color is taken from the primary color
+  of the current theme.
+  */
+  
     return SizedBox(
       width: 190, // <-- Button width
       height: 57, // <-- Button height

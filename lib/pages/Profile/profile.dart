@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_page/global_components/waves.dart';
+import 'package:evimero/global_components/waves.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
