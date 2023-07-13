@@ -79,18 +79,18 @@ class Login extends StatelessWidget {
                             // Drawing
                             const Spacer(),
                             const SizedBox(
-                              width: 22,
-                              height: 22,
-                              child: QuestionCircle()
-                            ) // Adjust the color as needed
+                                width: 22,
+                                height: 22,
+                                child:
+                                    QuestionCircle()) // Adjust the color as needed
                           ]))),
 
                   const SizedBox(height: 1),
                   // logo
                   Container(
-                      constraints: const BoxConstraints(
-                          maxWidth: 170), // Set the maximum width
-                      width: currentWidth * .8,
+                      constraints: const BoxConstraints(maxWidth: 300),
+                      // Set the maximum width
+                      width: currentWidth * .5,
                       child: Image.asset(imageSite)),
                   // Space between things
                   const SizedBox(height: 20),

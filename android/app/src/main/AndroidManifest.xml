@@ -9,8 +9,8 @@
     </queries>
 
     <application
-        android:name="${applicationName}"
-        android:label="Evimero"
+        android:name=".Evimero"
+        android:label="evimero"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:evimero/pages/Profile/profile.dart';
 import 'package:evimero/theme/light_theme.dart';
@@ -7,11 +6,11 @@ import 'pages/Login/login.dart';
 import 'pages/Home/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Evimero());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Evimero extends StatelessWidget {
+  const Evimero({super.key});
 
   // This widget is the root of your application.
   @override
