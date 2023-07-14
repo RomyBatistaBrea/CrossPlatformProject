@@ -1,9 +1,8 @@
+import 'package:evimero/main_nav_bar_page.dart';
 import 'package:flutter/material.dart';
 import 'theme/light_theme.dart';
 import 'theme/dark_theme.dart';
-import 'pages/Profile/profile.dart';
 import 'pages/Login/login.dart';
-import 'pages/Home/home.dart';
 
 void main() {
   runApp(const Evimero());
@@ -19,7 +18,7 @@ class Evimero extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const Home(),
+      home: MainNavPage(),
     );
   }
 }

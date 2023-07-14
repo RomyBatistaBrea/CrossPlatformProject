@@ -1,9 +1,11 @@
 import 'package:evimero/pages/Home/home_components/daily_update_container.dart';
+import 'package:evimero/pages/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:evimero/global_components/waves.dart';
 import 'package:evimero/pages/Home/home_components/user_data_model_components.data/event_types.dart';
 import 'package:evimero/pages/Home/home_components/weekdays.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:flutter/cupertino.dart';
 import 'dart:ui';
 import 'package:intl/intl.dart';
 
