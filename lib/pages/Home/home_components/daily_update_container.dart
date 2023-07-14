@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../../theme/constants/font_color.dart';
 
-class UpdateTab extends StatefulWidget {
-  const UpdateTab({super.key});
+class DailyContainer extends StatefulWidget {
+  const DailyContainer({super.key});
 
   @override
-  State<UpdateTab> createState() => _UpdateTabState();
+  State<DailyContainer> createState() => _DailyContainerState();
 }
 
-class _UpdateTabState extends State<UpdateTab> {
+class _DailyContainerState extends State<DailyContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +20,7 @@ class _UpdateTabState extends State<UpdateTab> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(35, 10, 0, 10),
+              padding: EdgeInsets.fromLTRB(35, 17, 0, 10),
               child: Text(
                 '18 Hrs\nFree',
                 textAlign: TextAlign.center,
@@ -29,7 +29,7 @@ class _UpdateTabState extends State<UpdateTab> {
             ),
             Spacer(),
             Padding(
-              padding: EdgeInsets.fromLTRB(35, 10, 35, 10),
+              padding: EdgeInsets.fromLTRB(35, 17, 35, 10),
               child: Text(
                 '3\nClasses',
                 textAlign: TextAlign.center,
@@ -38,7 +38,7 @@ class _UpdateTabState extends State<UpdateTab> {
             ),
             Spacer(),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 10, 35, 10),
+              padding: EdgeInsets.fromLTRB(0, 17, 35, 10),
               child: Text(
                 '4 Hrs\nStudy',
                 textAlign: TextAlign.center,
@@ -57,13 +57,14 @@ class _UpdateTabState extends State<UpdateTab> {
         SizedBox(
           height: 37.75,
           child: Padding(
-            padding: const EdgeInsets.only(top: 3),
+            padding: const EdgeInsets.only(top: 17),
             child: Text(
               'Upcoming',
               style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
-                  fontSize: 18),
+                  fontSize: 18,
+                  letterSpacing: 2),
             ),
           ),
         ),

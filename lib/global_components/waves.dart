@@ -30,13 +30,7 @@ class WavesBackground extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-            Theme.of(context).colorScheme.outline,
-            Theme.of(context).colorScheme.outlineVariant
-          ])),
+              color: Theme.of(context).scaffoldBackgroundColor),
       child: WaveWidget(
         config: CustomConfig(
             gradients: [

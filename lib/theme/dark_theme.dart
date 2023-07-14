@@ -37,10 +37,11 @@ ThemeData darkTheme = ThemeData(
     outline: const Color.fromARGB(255, 37, 38, 51),
     outlineVariant: const Color.fromARGB(255, 20, 18, 19),
     surface:
-        Color.fromARGB(255, 71, 71, 71), // Used for dark mode buttons
+        const Color.fromARGB(255, 71, 71, 71), // Used for dark mode buttons
     surfaceVariant: const Color.fromARGB(255, 53, 221, 182),
+    inversePrimary: const Color.fromARGB(255, 115, 116, 126), // Used for the top left of the moon
+    inverseSurface: const Color.fromARGB(255, 155, 86, 74), // Used for the bottom right of the moon
     brightness: Brightness.light,
   ),
-  scaffoldBackgroundColor: const Color.fromARGB(
-      255, 32, 33, 44), // Sets the background color behind the waves
+  scaffoldBackgroundColor: const Color.fromARGB(255, 28, 28, 39), // Sets the background color behind the waves
 );

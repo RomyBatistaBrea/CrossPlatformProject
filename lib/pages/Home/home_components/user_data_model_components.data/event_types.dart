@@ -1,5 +1,4 @@
 import 'package:evimero/theme/constants/font_color.dart';
-import 'package:evimero/theme/dark_theme.dart';
 import 'package:flutter/material.dart';
 
 class Event extends StatefulWidget {
@@ -53,14 +52,18 @@ class _EventState extends State<Event> {
             const Spacer(),
             Text(
               widget.event,
-              style: TextStyle(color: Theme.of(context).colorScheme.primary),
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary, fontSize: 15),
             ),
             const Spacer(),
-            Text('$hour:$minute'),
+            Text(
+              '$hour:$minute PM',
+              style: const TextStyle(color: fontColor, fontSize: 15),
+            ),
             const Spacer(),
             SizedBox(
-              width: 75,
-              height: 60,
+              width: 80,
+              height: 45,
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(

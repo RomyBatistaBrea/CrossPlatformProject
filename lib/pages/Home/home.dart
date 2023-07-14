@@ -78,67 +78,82 @@ class _HomeState extends State<Home> {
           child: Container(
               alignment: Alignment.center,
               child: const Column(mainAxisAlignment: MainAxisAlignment.start))),
-      Column(children: [
-        Row(children: [
-          Container(
-            padding: const EdgeInsets.fromLTRB(29, 43, 0, 0),
-            width: 147,
-            height: 73,
-            alignment: Alignment.topLeft,
-            child: Image.asset(imageSite),
-          ),
-        ]),
-        ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 500),
-            child: Column(children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 2, bottom: 10),
-                child: Text(
-                  formattedMonth,
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-                      fontSize: 21,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Padding(
-                  padding: const EdgeInsets.fromLTRB(41, 0, 40, 5),
-                  child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 400),
-                      child: weekDaysContent())),
-              const Divider(
-                color: Colors.white,
-                height: 20,
-                indent: 48,
-                endIndent: 45,
-                thickness: 1,
-              ),
-              Padding(
-                  padding: const EdgeInsets.fromLTRB(22, 0, 20, 0),
-                  child: calendarContent())
-            ])),
-        const UpdateTab(),
-        Expanded(
+      Stack(children: [
+        Container(
+            alignment: const Alignment(0.8, -0.89),
             child: Container(
-          color: const Color.fromARGB(38, 255, 255, 255),
-          child: ListView.builder(
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              return ListTile(
-                  title: Padding(
-                padding: const EdgeInsets.only(left: 13.0),
-                child: Event(
-                    eventType: 'df',
-                    event: 'Math Class',
-                    dateTime: DateTime.now()),
-              ));
-            },
-          ),
-        ))
-        // child:
-        //     Container(child: Column(children:
-        //     [UpdateTab(),
-        //     EventList()])))
+              width: 33,
+              height: 33,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Theme.of(context).colorScheme.inversePrimary,
+                    Theme.of(context).colorScheme.inverseSurface
+                  ],
+                ),
+                shape: BoxShape.circle,
+              ),
+            )),
+        Column(children: [
+          Row(children: [
+            Container(
+              padding: const EdgeInsets.fromLTRB(29, 43, 0, 0),
+              width: 150,
+              height: 77,
+              alignment: Alignment.topLeft,
+              child: Image.asset(imageSite),
+            ),
+          ]),
+          ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 500),
+              child: Column(children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 2, bottom: 10),
+                  child: Text(
+                    formattedMonth,
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                    padding: const EdgeInsets.fromLTRB(41, 0, 40, 5),
+                    child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 400),
+                        child: weekDaysContent())),
+                const Divider(
+                  color: Colors.white,
+                  height: 20,
+                  indent: 48,
+                  endIndent: 45,
+                  thickness: 1,
+                ),
+                Padding(
+                    padding: const EdgeInsets.fromLTRB(22, 0, 20, 0),
+                    child: calendarContent())
+              ])),
+          const DailyContainer(),
+          Expanded(
+              child: Container(
+            color: const Color.fromARGB(38, 255, 255, 255),
+            child: ListView.builder(
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return ListTile(
+                    title: Padding(
+                  padding: const EdgeInsets.only(left: 13.0),
+                  child: Event(
+                      eventType: 'df',
+                      event: 'Math Class',
+                      dateTime: DateTime.now()),
+                ));
+              },
+            ),
+          ))
+        ]),
       ]),
     ]);
   }
