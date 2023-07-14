@@ -1,7 +1,7 @@
 import 'package:evimero/pages/Home/home_components/daily_update_container.dart';
 import 'package:flutter/material.dart';
 import 'package:evimero/global_components/waves.dart';
-import 'package:evimero/pages/Home/home_components/draggable_sheet.dart';
+import 'package:evimero/pages/Home/home_components/user_data_model_components.data/event_types.dart';
 import 'package:evimero/pages/Home/home_components/weekdays.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'dart:ui';
@@ -117,9 +117,29 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.fromLTRB(22, 0, 20, 0),
                   child: calendarContent())
             ])),
-        UpdateTab()
+        const UpdateTab(),
+        Expanded(
+            child: Container(
+          color: const Color.fromARGB(38, 255, 255, 255),
+          child: ListView.builder(
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              return ListTile(
+                  title: Padding(
+                padding: const EdgeInsets.only(left: 13.0),
+                child: Event(
+                    eventType: 'df',
+                    event: 'Math Class',
+                    dateTime: DateTime.now()),
+              ));
+            },
+          ),
+        ))
+        // child:
+        //     Container(child: Column(children:
+        //     [UpdateTab(),
+        //     EventList()])))
       ]),
-      Positioned(child: const DraggableSheet()),
     ]);
   }
 
@@ -147,6 +167,9 @@ class _HomeState extends State<Home> {
   // All the content inside the TableCalendar
 
   Widget calendarContent() {
+    final double calendarHeight = (MediaQuery.of(context).size.height * 43) /
+        MediaQuery.of(context).size.height;
+
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 400),
       child: TableCalendar(
@@ -164,7 +187,7 @@ class _HomeState extends State<Home> {
                 fontWeight: FontWeight.w700)),
         locale: 'en_US',
         sixWeekMonthsEnforced: true,
-        rowHeight: 45,
+        rowHeight: calendarHeight,
         headerVisible: false,
         availableGestures: AvailableGestures.all,
         selectedDayPredicate: (day) => isSameDay(day, today),
