@@ -1,3 +1,4 @@
+import 'package:evimero/theme/constants/font_color.dart';
 import 'package:flutter/material.dart';
 
 ThemeData darkTheme = ThemeData(
@@ -36,7 +37,7 @@ ThemeData darkTheme = ThemeData(
     outline: const Color.fromARGB(255, 37, 38, 51),
     outlineVariant: const Color.fromARGB(255, 20, 18, 19),
     surface:
-        const Color.fromARGB(255, 133, 133, 133), // Used for dark mode buttons
+        Color.fromARGB(255, 71, 71, 71), // Used for dark mode buttons
     surfaceVariant: const Color.fromARGB(255, 53, 221, 182),
     brightness: Brightness.light,
   ),

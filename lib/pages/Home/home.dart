@@ -1,3 +1,4 @@
+import 'package:evimero/pages/Home/home_components/daily_update_container.dart';
 import 'package:flutter/material.dart';
 import 'package:evimero/global_components/waves.dart';
 import 'package:evimero/pages/Home/home_components/draggable_sheet.dart';
@@ -115,9 +116,10 @@ class _HomeState extends State<Home> {
               Padding(
                   padding: const EdgeInsets.fromLTRB(22, 0, 20, 0),
                   child: calendarContent())
-            ]))
+            ])),
+        UpdateTab()
       ]),
-      const DraggableSheet()
+      Positioned(child: const DraggableSheet()),
     ]);
   }
 

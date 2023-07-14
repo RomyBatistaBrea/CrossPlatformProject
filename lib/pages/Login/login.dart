@@ -90,7 +90,7 @@ class Login extends StatelessWidget {
                   Container(
                       constraints: const BoxConstraints(maxWidth: 300),
                       // Set the maximum width
-                      width: currentWidth * .5,
+                      width: currentWidth * .55,
                       child: Image.asset(imageSite)),
                   // Space between things
                   const SizedBox(height: 20),
@@ -99,9 +99,10 @@ class Login extends StatelessWidget {
                     'Welcome',
                     style: TextStyle(
                       fontFamily: "Inter",
+                      fontWeight: FontWeight.w100,
                       letterSpacing: 5,
                       color: Colors.white,
-                      fontSize: 32,
+                      fontSize: 33,
                     ),
                   ),
 

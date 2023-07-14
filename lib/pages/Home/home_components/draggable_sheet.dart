@@ -1,4 +1,4 @@
-import 'package:evimero/constants/font_color.dart';
+import 'package:evimero/theme/constants/font_color.dart';
 import 'package:flutter/material.dart';
 import 'package:evimero/pages/Home/home_components/user_data_model_components.data/event_types.dart';
 
@@ -27,7 +27,7 @@ class _DraggableSheetState extends State<DraggableSheet> {
 
   @override
   Widget build(BuildContext context) {
-    double dragSheetHeight = (MediaQuery.of(context).size.height * 0.47) /
+    double dragSheetHeight = (MediaQuery.of(context).size.height * 0.34) /
         MediaQuery.of(context).size.height;
     return DraggableScrollableSheet(
         initialChildSize: dragSheetHeight,
@@ -35,75 +35,10 @@ class _DraggableSheetState extends State<DraggableSheet> {
         maxChildSize: dragSheetHeight,
         builder: (BuildContext context, ScrollController scrollController) {
           return CustomScrollView(controller: scrollController, slivers: [
-            SliverAppBar(
-                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                pinned: true,
-                floating: true,
-                forceElevated: true,
-                toolbarHeight: 130,
-                expandedHeight: 130,
-                shape: const RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(35))),
-                title: Column(children: [
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(35, 5, 0, 10),
-                        child: Text(
-                          '18 Hrs\nFree',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: fontColor, fontSize: 15),
-                        ),
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(35, 5, 35, 10),
-                        child: Text(
-                          '3\nClasses',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: fontColor, fontSize: 15),
-                        ),
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 5, 35, 10),
-                        child: Text(
-                          '4 Hrs\nStudy',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: fontColor, fontSize: 15),
-                        ),
-                      )
-                    ],
-                  ),
-                  const Divider(
-                    color: Colors.white,
-                    height: 20,
-                    indent: 48,
-                    endIndent: 45,
-                    thickness: 0.1,
-                  ),
-                  SizedBox(
-                    height: 60,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Text(
-                        'Upcoming',
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
-                      ),
-                    ),
-                  ),
-                ])),
             SliverToBoxAdapter(
               child: Container(
                   decoration: const BoxDecoration(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(45)),
-                      color: Color.fromARGB(0, 0, 0, 0)),
+                      color: Color.fromARGB(38, 255, 255, 255)),
                   child: ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),

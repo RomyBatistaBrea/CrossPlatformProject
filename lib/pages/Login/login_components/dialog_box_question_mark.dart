@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:evimero/constants/font_color.dart';
+import 'package:evimero/theme/constants/font_color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:url_launcher/url_launcher.dart';

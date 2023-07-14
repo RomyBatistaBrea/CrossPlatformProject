@@ -1,3 +1,5 @@
+import 'package:evimero/theme/constants/font_color.dart';
+import 'package:evimero/theme/dark_theme.dart';
 import 'package:flutter/material.dart';
 
 class Event extends StatefulWidget {
@@ -43,7 +45,7 @@ class _EventState extends State<Event> {
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(
-        height: 40,
+        height: 45,
         child: Padding(
           padding: const EdgeInsets.only(left: 10, right: 22),
           child: Row(children: [
@@ -54,7 +56,26 @@ class _EventState extends State<Event> {
               style: TextStyle(color: Theme.of(context).colorScheme.primary),
             ),
             const Spacer(),
-            Text('$hour:$minute')
+            Text('$hour:$minute'),
+            const Spacer(),
+            SizedBox(
+              width: 75,
+              height: 60,
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.surface,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                  ),
+                  child: const Text("Done",
+                      style: TextStyle(
+                        color: fontColor,
+                        fontFamily: 'inter',
+                        fontSize: 15,
+                      ))),
+            )
           ]),
         ),
       ),

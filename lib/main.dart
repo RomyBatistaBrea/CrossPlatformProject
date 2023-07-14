@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:evimero/pages/Profile/profile.dart';
-import 'package:evimero/theme/light_theme.dart';
-import 'package:evimero/theme/dark_theme.dart';
+import 'theme/light_theme.dart';
+import 'theme/dark_theme.dart';
+import 'pages/Profile/profile.dart';
 import 'pages/Login/login.dart';
 import 'pages/Home/home.dart';
 
@@ -19,7 +19,7 @@ class Evimero extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const Login(),
+      home: const Home(),
     );
   }
 }
