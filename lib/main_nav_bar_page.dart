@@ -35,21 +35,17 @@ class _MainNavPageState extends State<MainNavPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
+        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 6.0),
         child: Container(
           height: 80.0, // Adjust the height of the navigation bar
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20),
             ),
-            gradient: LinearGradient(
-              colors: [Theme.of(context).colorScheme.onPrimaryContainer, Theme.of(context).scaffoldBackgroundColor], // Set the gradient colors here
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
+            color: Color.fromARGB(38, 255, 255, 255),
           ), // Set the background color here
           child: Flex(
             direction: Axis.horizontal,
@@ -78,7 +74,7 @@ class _MainNavPageState extends State<MainNavPage> {
         children: [
           AnimatedContainer(
             duration: const Duration(milliseconds: 300),
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(2.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: isSelected ? Colors.transparent : Colors.transparent,

@@ -74,7 +74,7 @@ class WavesBackground extends StatelessWidget {
             gradientBegin: Alignment.centerLeft,
             gradientEnd: Alignment.centerRight,
             durations: [19000, 15467, 24256, 13434, 18462, 16452, 12435, 26236],
-            heightPercentages: [0.4, 0.46, 0.54, 0.6, 0.67, 0.73, 0.8, 0.87],
+            heightPercentages: [0.4, 0.46, 0.54, 0.6, 0.67, 0.73, 0.8, 1],
             blur: const MaskFilter.blur(BlurStyle.normal, 3)),
         size: const Size(double.infinity, double.infinity),
         waveAmplitude: 30,

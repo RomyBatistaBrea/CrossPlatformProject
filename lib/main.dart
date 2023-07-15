@@ -18,7 +18,7 @@ class Evimero extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: MainNavPage(),
+      home: Login(),
     );
   }
 }

@@ -1,11 +1,9 @@
 import 'package:evimero/pages/Home/home_components/daily_update_container.dart';
-import 'package:evimero/pages/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:evimero/global_components/waves.dart';
 import 'package:evimero/pages/Home/home_components/user_data_model_components.data/event_types.dart';
 import 'package:evimero/pages/Home/home_components/weekdays.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:flutter/cupertino.dart';
 import 'dart:ui';
 import 'package:intl/intl.dart';
 
@@ -19,6 +17,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   DateTime today = DateTime.now();
   late String formattedMonth;
+  late String formattedDay;
   bool isScrolledToTop = false;
 
   _HomeState() {
@@ -29,13 +28,17 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     formattedMonth =
-        DateFormat('MMMM').format(today); // Format the current month
+        DateFormat('MMMM').format(today); // Initializes the Late String
+    formattedDay =
+        DateFormat('dd').format(today); // Initializes the Late String
   }
 
   void _onDaySelected(DateTime day, DateTime focusedDay) {
     setState(() {
       today = day;
-      formattedMonth = DateFormat('MMMM').format(day);
+      formattedMonth =
+          DateFormat('MMMM').format(day); // Updates the Month on top
+      formattedDay = DateFormat('dd').format(today); // Updates the Day on top
     });
   }
 
@@ -87,6 +90,14 @@ class _HomeState extends State<Home> {
               width: 33,
               height: 33,
               decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black,
+                    spreadRadius: 0,
+                    blurRadius: 1.0,
+                    offset: Offset(1, 2),
+                  ),
+                ],
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -114,7 +125,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.only(top: 2, bottom: 10),
                   child: Text(
-                    formattedMonth,
+                    '$formattedMonth $formattedDay',
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontSize: 21,
@@ -139,20 +150,28 @@ class _HomeState extends State<Home> {
               ])),
           const DailyContainer(),
           Expanded(
-              child: Container(
-            color: const Color.fromARGB(38, 255, 255, 255),
-            child: ListView.builder(
-              itemCount: 20,
-              itemBuilder: (context, index) {
-                return ListTile(
-                    title: Padding(
-                  padding: const EdgeInsets.only(left: 13.0),
-                  child: Event(
-                      eventType: 'df',
-                      event: 'Math Class',
-                      dateTime: DateTime.now()),
-                ));
-              },
+              child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Container(
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20.0),
+                    bottomRight: Radius.circular(20.0),
+                  ),
+                  color: Color.fromARGB(38, 255, 255, 255)),
+              child: ListView.builder(
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                      title: Padding(
+                    padding: const EdgeInsets.only(left: 13.0),
+                    child: Event(
+                        eventType: 'df',
+                        event: 'Math Class',
+                        dateTime: DateTime.now()),
+                  ));
+                },
+              ),
             ),
           ))
         ]),
@@ -190,21 +209,11 @@ class _HomeState extends State<Home> {
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 400),
       child: TableCalendar(
-        daysOfWeekVisible: false,
-        calendarStyle: CalendarStyle(
-            defaultTextStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontFamily: 'inter',
-                fontWeight:
-                    FontWeight.w700 // Modify the default font color of days
-                ),
-            weekendTextStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w700)),
+        daysOfWeekVisible:
+            false, // Created our own custom week days widget in weekdays.dart
         locale: 'en_US',
-        sixWeekMonthsEnforced: true,
-        rowHeight: calendarHeight,
+        sixWeekMonthsEnforced: true, // Shows 6 Rows of days
+        rowHeight: calendarHeight, // Custom calendar height variable
         headerVisible: false,
         availableGestures: AvailableGestures.all,
         selectedDayPredicate: (day) => isSameDay(day, today),
@@ -212,6 +221,47 @@ class _HomeState extends State<Home> {
         firstDay: DateTime.utc(2023, 7, 1),
         lastDay: DateTime.utc(2023, 10, 2),
         onDaySelected: _onDaySelected,
+
+        // Styles the calendar
+        calendarStyle: CalendarStyle(
+          defaultTextStyle: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontFamily: 'inter',
+              fontWeight:
+                  FontWeight.w700 // Modify the default font color of days
+              ),
+          weekendTextStyle: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontFamily: 'inter',
+              fontWeight: FontWeight.w700),
+
+          // Styles today's day
+          todayDecoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border:
+                Border.all(color: Colors.white.withOpacity(0.3), width: 1.0),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Theme.of(context).colorScheme.inversePrimary,
+                  Theme.of(context).colorScheme.outlineVariant
+                ]),
+          ),
+
+          // Styles selected day
+          selectedDecoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Colors.white, width: 1.0),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Theme.of(context).colorScheme.inversePrimary,
+                  Theme.of(context).colorScheme.outlineVariant
+                ]),
+          ),
+        ),
       ),
     );
   }

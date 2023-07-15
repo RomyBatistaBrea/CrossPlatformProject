@@ -1,4 +1,5 @@
 
+import 'package:evimero/main_nav_bar_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -31,8 +32,8 @@ class CustomButton extends StatelessWidget {
       height: 57, // <-- Button height
       child: ElevatedButton(
         onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MainNavPage()));
           //executes when the button is pressed
-          print('Button Pressed');
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Theme.of(context).colorScheme.surface,
