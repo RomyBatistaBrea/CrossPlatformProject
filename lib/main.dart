@@ -1,10 +1,15 @@
 import 'package:evimero/main_nav_bar_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'theme/light_theme.dart';
 import 'theme/dark_theme.dart';
 import 'pages/Login/login.dart';
 
-void main() {
+void main() { 
+  // Makes android notification bar and bottom bar background color transparent
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent));
   runApp(const Evimero());
 }
 
@@ -18,7 +23,7 @@ class Evimero extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: Login(),
+      home: const Login(),
     );
   }
 }

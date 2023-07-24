@@ -1,4 +1,3 @@
-import 'package:evimero/theme/constants/font_color.dart';
 import 'package:flutter/material.dart';
 
 ThemeData darkTheme = ThemeData(
@@ -27,21 +26,20 @@ ThemeData darkTheme = ThemeData(
 */
   colorScheme: ColorScheme.fromSwatch().copyWith(
     primary: Colors.white, // Fonts color
-    secondary: const Color.fromARGB(255, 53, 221, 182),
-    onPrimary: const Color.fromARGB(255, 75, 55, 59),
-    onSecondary: const Color.fromARGB(255, 82, 53, 55),
-    tertiary: const Color.fromARGB(255, 97, 81, 84),
-    onTertiary: const Color.fromARGB(255, 97, 78, 92),
-    primaryContainer: const Color.fromARGB(255, 94, 66, 71),
-    onPrimaryContainer: const Color.fromARGB(255, 139, 121, 124),
-    outline: const Color.fromARGB(255, 37, 38, 51),
-    outlineVariant: const Color.fromARGB(255, 20, 18, 19),
-    surface:
-        const Color.fromARGB(255, 71, 71, 71), // Used for dark mode buttons
-    surfaceVariant: const Color.fromARGB(255, 53, 221, 182),
+    secondary: Colors.white, // Used for calendar selected day border
+    onPrimary: const Color.fromARGB(255, 82, 53, 48), // Used for single wave gradient
+    onSecondary: const Color.fromARGB(255, 82, 53, 55), // Used for single wave gradient
+    //tertiary: const Color.fromARGB(255, 97, 81, 84),
+    //onTertiary: const Color.fromARGB(255, 97, 78, 92),
+    //primaryContainer: const Color.fromARGB(255, 94, 66, 71),
+    //onPrimaryContainer: const Color.fromARGB(255, 139, 121, 124),
+    //outline: const Color.fromARGB(255, 37, 38, 51),
+    outlineVariant: const Color.fromARGB(255, 104, 50, 50), // Used for calendar days bubble
+    surface: const Color.fromARGB(255, 71, 71, 71), // Used for dark mode buttons
+    //surfaceVariant: const Color.fromARGB(255, 53, 221, 182), 
     inversePrimary: const Color.fromARGB(255, 115, 116, 126), // Used for the top left of the moon
     inverseSurface: const Color.fromARGB(255, 155, 86, 74), // Used for the bottom right of the moon
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
   ),
-  scaffoldBackgroundColor: const Color.fromARGB(255, 28, 28, 39), // Sets the background color behind the waves
+  scaffoldBackgroundColor: const Color.fromARGB(255, 28, 28, 39), // Scaffold default color
 );

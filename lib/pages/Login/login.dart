@@ -69,8 +69,8 @@ class Login extends StatelessWidget {
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                   colors: [
-                                    Theme.of(context).colorScheme.outline,
-                                    Theme.of(context).colorScheme.onSecondary
+                                    Theme.of(context).colorScheme.inversePrimary,
+                                    Theme.of(context).colorScheme.inverseSurface
                                   ],
                                 ),
                                 shape: BoxShape.circle,

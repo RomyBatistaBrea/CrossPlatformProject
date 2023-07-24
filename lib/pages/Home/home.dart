@@ -1,6 +1,5 @@
 import 'package:evimero/pages/Home/home_components/daily_update_container.dart';
 import 'package:flutter/material.dart';
-import 'package:evimero/global_components/waves.dart';
 import 'package:evimero/pages/Home/home_components/user_data_model_components.data/event_types.dart';
 import 'package:evimero/pages/Home/home_components/weekdays.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -67,6 +66,7 @@ class _HomeState extends State<Home> {
   */
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.transparent,
       body: content(),
     );
   }
@@ -75,40 +75,6 @@ class _HomeState extends State<Home> {
     const String imageSite = 'assets/images/light_evimero.png';
 
     return Stack(children: [
-      const Positioned.fill(child: WavesBackground()),
-      BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 8),
-
-          // Lines up in column
-          child: Container(
-              alignment: Alignment.center,
-              child: const Column(mainAxisAlignment: MainAxisAlignment.start))),
-      Stack(children: [
-        Container(
-            alignment: const Alignment(0.8, -0.89),
-            child: Container(
-              width: 33,
-              height: 33,
-              decoration: BoxDecoration(
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black,
-                    spreadRadius: 0,
-                    blurRadius: 1.0,
-                    offset: Offset(1, 2),
-                  ),
-                ],
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Theme.of(context).colorScheme.inversePrimary,
-                    Theme.of(context).colorScheme.inverseSurface
-                  ],
-                ),
-                shape: BoxShape.circle,
-              ),
-            )),
         Column(children: [
           Row(children: [
             Container(
@@ -175,8 +141,7 @@ class _HomeState extends State<Home> {
             ),
           ))
         ]),
-      ]),
-    ]);
+      ]);
   }
 
   // Week day letters in the top row
@@ -239,7 +204,7 @@ class _HomeState extends State<Home> {
           todayDecoration: BoxDecoration(
             shape: BoxShape.circle,
             border:
-                Border.all(color: Colors.white.withOpacity(0.3), width: 1.0),
+                Border.all(color:Colors.grey, width: .75),
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -252,7 +217,7 @@ class _HomeState extends State<Home> {
           // Styles selected day
           selectedDecoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.white, width: 1.0),
+            border: Border.all(color: Theme.of(context).colorScheme.secondary, width: 1.5),
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
