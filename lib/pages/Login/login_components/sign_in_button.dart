@@ -32,7 +32,7 @@ class CustomButton extends StatelessWidget {
       height: 57, // <-- Button height
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => MainNavPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const MainNavPage()));
           //executes when the button is pressed
         },
         style: ElevatedButton.styleFrom(
@@ -44,7 +44,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           'Secure Login',
           style: TextStyle(
-            fontFamily: 'inter',
+            fontFamily: 'Inter',
             fontSize: 17,
             letterSpacing: 1,
             color: Theme.of(context)

@@ -191,7 +191,6 @@ class _HomeState extends State<Home> {
         calendarStyle: CalendarStyle(
           defaultTextStyle: TextStyle(
               color: Theme.of(context).colorScheme.primary,
-              fontFamily: 'inter',
               fontWeight:
                   FontWeight.w700 // Modify the default font color of days
               ),

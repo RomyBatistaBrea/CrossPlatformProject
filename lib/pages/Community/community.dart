@@ -11,7 +11,14 @@ class _CommunityState extends State<Community> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Community')),
+      appBar: AppBar(title: const Text('Community')),
+      body: DefaultTextStyle(
+        // Use the null-aware operator (??) to provide a default style
+        style: Theme.of(context).textTheme.bodyMedium ??
+            const TextStyle(
+              color: Colors.white,
+            ),
+        child: const Text('hi'))
     );
   }
 }

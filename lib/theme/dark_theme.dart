@@ -24,6 +24,15 @@ ThemeData darkTheme = ThemeData(
 
   Note: The darkTheme is a customization of the default ThemeData and can be used to override the default color scheme for dark mode.
 */
+  textTheme: const TextTheme(
+    bodyMedium: TextStyle(
+      // Customize the font style for bodyText
+      fontFamily: 'Inter',
+      fontSize: 16.0,
+      fontWeight: FontWeight.w100,
+      color: Colors.white,
+    ),
+  ),
   colorScheme: ColorScheme.fromSwatch().copyWith(
     primary: Colors.white, // Fonts color
     secondary: Colors.white, // Used for calendar selected day border

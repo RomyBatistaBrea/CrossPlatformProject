@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
 ThemeData lightTheme = ThemeData(
+  textTheme: const TextTheme(
+    bodyMedium: TextStyle(
+      // Customize the font style for bodyText
+      fontFamily: 'Inter',
+      fontSize: 16.0,
+      fontWeight: FontWeight.w100,
+      color: Colors.white,
+    ),
+  ),
   colorScheme: ColorScheme.fromSwatch().copyWith(
     primary: Colors.white, // Fonts color
     secondary: const Color.fromARGB(255, 53, 221, 182), // Used for calendar selected day border
